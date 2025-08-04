@@ -27,6 +27,7 @@ public class QAJobFilterTest extends BaseTest {
     @Test(description = "QA Jobs Filter Case")
     public void case001() {
         homePageSteps.navigateToInsiderHomePage();
+        homePageSteps.acceptCookies();
         homePageSteps.checkHomePageOpened();
         homePageSteps.hoverToCompanyInNavBar();
         homePageSteps.navbarCareersSelect();

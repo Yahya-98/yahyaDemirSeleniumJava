@@ -46,7 +46,7 @@ public class BaseTest {
     }
 
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) {
         ExtentTest test = testThread.get();
 

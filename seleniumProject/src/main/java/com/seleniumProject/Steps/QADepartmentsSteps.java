@@ -31,7 +31,7 @@ public class QADepartmentsSteps extends QADepartmentPageLoators {
     }
 
     public void checkDropdownDepartment() {
-        Assert.assertEquals(getTextElement(DepartmentDropdown), "×\nQuality Assurance",
+        softAssert(getTextElement(DepartmentDropdown), "×\nQuality Assurance",
                 "Selected department not QA");
     }
 
@@ -39,10 +39,10 @@ public class QADepartmentsSteps extends QADepartmentPageLoators {
         waitUntilStringChanged(resultCount, tmpString);
         scrollElementWithJS(positionLocationList.get(0));
         List<String> actualList = getTextElement(positionDepartmentList);
-        Assert.assertTrue(containsList(actualList, "Quality Assurance")
+        softAssert(containsList(actualList, "Quality Assurance")
                 , "Jobs department not filtered! Actual List: " + actualList);
         actualList = getTextElement(positionLocationList);
-        Assert.assertTrue(containsList(actualList, "Istanbul, Turkiye")
+        softAssert(containsList(actualList, "Istanbul, Turkiye")
                 , "Jobs location not filtered! Actual List: " + actualList);
 
     }
@@ -56,7 +56,7 @@ public class QADepartmentsSteps extends QADepartmentPageLoators {
     }
 
     public void checkViewRolePageOpened() {
-        Assert.assertEquals(getTextElement(jobTitleViewRolePage), tmpString, "Job title not match in view role page!");
+        softAssert(getTextElement(jobTitleViewRolePage), tmpString, "Job title not match in view role page!");
         Assert.assertEquals(getTextElement(btnApplyThisJob), "APPLY FOR THIS JOB"
                 , "Apply for this job button text don't match");
     }

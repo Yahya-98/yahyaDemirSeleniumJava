@@ -16,5 +16,7 @@ public class HomePageLocators extends GlobalMethods {
     @FindBy(xpath = "//a[@class='dropdown-sub' and contains(.,'Careers')]")
     public static WebElement navBarBtnCareers;
 
+    @FindBy(css = "a[id='wt-cli-accept-all-btn']")
+    public static WebElement acceptCookies;
 
 }

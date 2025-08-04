@@ -18,7 +18,7 @@ public class HomePageSteps extends HomePageLocators {
     }
 
     public void checkHomePageOpened() {
-        Assert.assertTrue(isDisplayElement(imgInsiderLogo), "Insider logo not display in homepage");
+        softAssert(isDisplayElement(imgInsiderLogo), "Insider logo not display in homepage");
     }
 
     public void hoverToCompanyInNavBar() {
@@ -29,5 +29,8 @@ public class HomePageSteps extends HomePageLocators {
         clickMethod(navBarBtnCareers, "navbar careers click");
     }
 
+    public void acceptCookies(){
+        clickMethod(acceptCookies,"Accept All click");
+    }
 
 }

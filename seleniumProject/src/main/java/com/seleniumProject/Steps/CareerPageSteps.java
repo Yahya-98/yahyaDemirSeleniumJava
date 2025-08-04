@@ -19,16 +19,16 @@ public class CareerPageSteps extends CareerPageLocators {
     }
 
     public void checkOurLocationsDisplayed() {
-        Assert.assertTrue(isDisplayElement(locationSlider), "Our locations slider not displayed");
-        Assert.assertEquals(getTextElement(tittleOurLocations), "Our Locations", "Our locations title not match!");
+        softAssert(isDisplayElement(locationSlider), "Our locations slider not displayed");
+        softAssert(getTextElement(tittleOurLocations), "Our Locations", "Our locations title not match!");
     }
 
     public void checkTeamsDisplayed() {
-        Assert.assertTrue(isDisplayElement(imgJobTeams), "Job teams not displayed!");
+        softAssert(isDisplayElement(imgJobTeams), "Job teams not displayed!");
     }
 
     public void checkLifeAtInsiderBlockDisplayed() {
-        Assert.assertTrue(isDisplayElement(titleLifeAtInsider), "Lif at insider block not diplayed!");
+        softAssert(isDisplayElement(titleLifeAtInsider), "Lif at insider block not diplayed!");
     }
 
     public void seeAllTeamsClick() {

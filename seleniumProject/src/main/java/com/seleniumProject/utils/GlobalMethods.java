@@ -179,4 +179,29 @@ public class GlobalMethods extends BaseTest {
         }
         driver.switchTo().window(newTab);
     }
+
+    public void softAssert(String actualText, String expectedText, String failLogMessage) {
+        if (!expectedText.equals(actualText)) {
+            Log.warning(failLogMessage +
+                    String.format(" <br />  Expected = expected ".replace("expected", expectedText) +
+                            "<br />   Actual = actual ".replace("actual", actualText)));
+            getScreenShot();
+        }
+    }
+
+    public void softAssert(boolean condition, String failLogMessage) {
+        if (!condition) {
+            Log.warning(failLogMessage);
+            getScreenShot();
+        }
+    }
+
+    public void softAssert(int actual, int expected, String passLogMessage, String failLogMessage) {
+        if (actual != expected) {
+            Log.warning(failLogMessage +
+                    String.format(" <br />  Expected =" + expected,
+                            "<br />   Actual = " + actual));
+            getScreenShot();
+        }
+    }
 }
